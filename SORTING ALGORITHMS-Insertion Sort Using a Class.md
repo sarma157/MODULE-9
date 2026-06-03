@@ -35,36 +35,27 @@ To develop a Python class with functions to:
 
 ## 💻 PROGRAM:
 ```
-class InsertionSorter:
+class Numbers:
     def __init__(self):
         self.lst = []
 
     def create_list(self):
-        n = int(input("Enter the number of elements: "))
-        print("Enter the elements:")
-        for _ in range(n):
-            val = int(input())
-            self.lst.append(val)
+        n = int(input())
+        self.lst = [int(input()) for _ in range(n)]
 
-    def insertion_sort(self):
-        for i in range(1, len(self.lst)):
-            key = self.lst[i]
-            j = i - 1
-            while j >= 0 and key < self.lst[j]:
-                self.lst[j + 1] = self.lst[j]
-                j -= 1
-            self.lst[j + 1] = key
+    def sorting(self):
+        n = len(self.lst)
+        for i in range(n):
+            for j in range(0, n - i - 1):
+                if self.lst[j] > self.lst[j + 1]:
+                    self.lst[j], self.lst[j + 1] = self.lst[j + 1], self.lst[j]
 
-    def print_list(self):
-        print("Sorted list:", self.lst)
-
-sorter = InsertionSorter()
-sorter.create_list()
-sorter.insertion_sort()
-sorter.print_list()
+    def print_List(self):
+        for num in self.lst:
+            print(num)
 ```
 ## OUTPUT:
-<img width="508" height="205" alt="image" src="https://github.com/user-attachments/assets/cba9c25e-793e-4a12-91e8-abf4e6032e16" />
+<img width="737" height="622" alt="image" src="https://github.com/user-attachments/assets/daa68e39-6027-4744-a3d8-437552637a7e" />
 
 ## RESULT:
 Hence Insertion Sort using a Python class is done.
