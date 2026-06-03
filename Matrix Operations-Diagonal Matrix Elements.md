@@ -19,27 +19,24 @@ To write a Python program that prints only the diagonal elements of a given matr
 
 ## 🖥️ Program
 ```
-rows = int(input("Enter the number of rows: "))
-cols = int(input("Enter the number of columns: "))
-matrix = []
-print("Enter the matrix elements row-wise:")
+rows=int(input())
+columns=int(input())
+matrix=[[0]*columns for row in range(rows)]
 for i in range(rows):
-    row = list(map(int, input(f"Enter elements for row {i + 1} (space-separated): ").split()))
-    matrix.append(row)
-print("\nFull Matrix:")
-for row in matrix:
-    print(row)
-print("\nDiagonal Elements:")
+    lines=list(map(int, input().split()))
+    for j in range(columns):
+        matrix[i][j]=lines[j]
+print(matrix)
 for i in range(rows):
-    for j in range(cols):
-        if i == j:
-            print(matrix[i][j], end=" ")
+    for j in range(columns):
+        if(i==j):
+            print(matrix[i][j],end=" ")
         else:
-            print(" ", end=" ")
+            print(' ',end=" ")
     print()
 ```
 ### Output:
-<img width="545" height="407" alt="image" src="https://github.com/user-attachments/assets/aa2b65ba-8c89-46d9-ba3a-fb7c83f4440a" />
+<img width="837" height="353" alt="image" src="https://github.com/user-attachments/assets/055f9638-9364-46dd-ad02-72b897dbec7f" />
 
 ## Result
 Hence Printd only the diagonal elements of a given matrix
